@@ -1,12 +1,14 @@
 import streamlit as st
-from src.predict import load_model, predict_player
-from src.config import CLASSIFIER_PATH, REGRESSOR_PATH
 import sys
 import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-'''st.title("🏈 NFL Combine Draft Predictor")
+from src.predict import load_model, predict_player
+from src.config import CLASSIFIER_PATH, REGRESSOR_PATH
+
+
+st.title("🏈 NFL Combine Draft Predictor")
 if st.button("Load Model"):
     st.write("Loading...")
 
@@ -30,9 +32,5 @@ if st.button("predict"):
     if drafted:
         st.success(f"Drafte Estimated Pick: {pick} ")
     else:
-        st.error("Not Drafted")'''
-
-st.title("🏈 NFL Draft Predictor")
-
-st.write("App is running successfully")
+        st.error("Not Drafted")
 
