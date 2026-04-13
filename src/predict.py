@@ -1,8 +1,10 @@
 import joblib
 import numpy as np
 
-def load_model(path):
-    return joblib.load(path)
+def load_model(clf_path, reg_path):
+    clf = joblib.load(clf_path)
+    reg = joblib.load(reg_path)
+    return clf, reg
 
 def predict_player(clf, reg, features):
     features = np.array(features).reshape(1, -1)
